@@ -1,14 +1,18 @@
-﻿using CitySimulation.Application.Contracts;
+﻿using CitySimulation.Application.Contracts.Infrastructure;
+using CitySimulation.Application.Contracts.Persistance;
 
 namespace CitySimulation.Infrastructure.SimulationBackgroundServices
 {
     public class SimulationService : ISimulationService
     {
-        public Task TickAsync(CancellationToken cancellationToken)
+        private readonly IPersonRepository _personRepository;
+        public SimulationService(IPersonRepository personRepository)
         {
-            Console.WriteLine($"Simulation tick: {DateTime.Now:HH:mm:ss}");
-
-            return Task.CompletedTask;
+            _personRepository = personRepository;
+        }
+        public async Task TickAsync(CancellationToken cancellationToken)
+        {
+            await _personRepository.IncrementAgeAsync(cancellationToken);
         }
     }
 }

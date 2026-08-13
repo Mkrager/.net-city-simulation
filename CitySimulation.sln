@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySimulation.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySimulation.Api", "CitySimulation.Api\CitySimulation.Api.csproj", "{67A7B335-5FA8-4C2B-83E5-078057FCB81B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySimulation.Persistence", "CitySimulation.Persistence\CitySimulation.Persistence.csproj", "{A277C1E3-3F17-4087-B62F-D842FC8BE015}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{67A7B335-5FA8-4C2B-83E5-078057FCB81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A7B335-5FA8-4C2B-83E5-078057FCB81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67A7B335-5FA8-4C2B-83E5-078057FCB81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A277C1E3-3F17-4087-B62F-D842FC8BE015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A277C1E3-3F17-4087-B62F-D842FC8BE015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A277C1E3-3F17-4087-B62F-D842FC8BE015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A277C1E3-3F17-4087-B62F-D842FC8BE015}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{A6B6FBBC-C8BA-43A3-AEED-62C1EFBAA781} = {9EE7804D-B6DE-4A3C-A461-B1F1C941A865}
 		{9F3B38B7-2D39-491E-A29F-1E62CB136142} = {48F05898-6659-45AE-A0AA-2EBFA4D35AA6}
 		{67A7B335-5FA8-4C2B-83E5-078057FCB81B} = {36E0E7EA-7510-472D-85CE-4204EB36045F}
+		{A277C1E3-3F17-4087-B62F-D842FC8BE015} = {48F05898-6659-45AE-A0AA-2EBFA4D35AA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65F01D2F-9E45-4164-A9F2-15ECC18D2BC1}

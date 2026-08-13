@@ -1,4 +1,4 @@
-﻿using CitySimulation.Application.Contracts;
+﻿using CitySimulation.Application.Contracts.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

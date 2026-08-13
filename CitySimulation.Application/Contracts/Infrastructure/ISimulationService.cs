@@ -1,4 +1,4 @@
-﻿namespace CitySimulation.Application.Contracts
+﻿namespace CitySimulation.Application.Contracts.Infrastructure
 {
     public interface ISimulationService
     {

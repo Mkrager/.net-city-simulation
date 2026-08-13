@@ -1,5 +1,6 @@
 ﻿using CitySimulation.Application;
 using CitySimulation.Infrastructure;
+using CitySimulation.Persistence;
 using Microsoft.OpenApi.Models;
 
 
@@ -14,6 +15,7 @@ namespace CitySimulation.Api
 
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices();
+            builder.Services.AddPersistenceServices(builder.Configuration);
 
             builder.Services.AddControllers();
 

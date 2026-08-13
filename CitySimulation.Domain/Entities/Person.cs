@@ -12,7 +12,7 @@ namespace CitySimulation.Domain.Entities
         public Guid CityId { get; set; }
         public City City { get; set; } = default!;
 
-        public Guid JobId { get; set; }
+        public Guid? JobId { get; set; }
         public Job Job { get; set; } = default!;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using CitySimulation.Infrastructure.SimulationBackgroundServices;
-using CitySimulation.Application.Contracts;
+using CitySimulation.Application.Contracts.Infrastructure;
 
 namespace CitySimulation.Infrastructure
 {
