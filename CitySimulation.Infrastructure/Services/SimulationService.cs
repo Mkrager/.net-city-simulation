@@ -35,7 +35,7 @@ namespace CitySimulation.Infrastructure.Services
                     await _personRepository.DeleteAsync(person);
                 }
 
-                await _relationshipService.FindPartnerAsync(person);
+                await _relationshipService.FindPartnerAsync(people);
 
                 if (!person.PartnerId.HasValue)
                     continue;
@@ -43,12 +43,12 @@ namespace CitySimulation.Infrastructure.Services
                 if (processedPairs.Contains(person.PartnerId.Value))
                     continue;
 
-                await _birthService.ProcessBirthAsync(person);
+                await _birthService.ProcessBirthAsync(person, person.Partner);
 
                 processedPairs.Add(person.Id);
 
-                Console.WriteLine($"People count:{await _personRepository.GetPeopleCount()}");
-            }   
+            }
+
         }
     }
 }

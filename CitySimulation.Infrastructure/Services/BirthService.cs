@@ -14,7 +14,7 @@ namespace CitySimulation.Infrastructure.Services
             _personRepository = personRepository;
             _nameGenerator = nameGenerator;
         }
-        public async Task ProcessBirthAsync(Person person)
+        public async Task ProcessBirthAsync(Person person,Person partner)
         {
             if (!person.PartnerId.HasValue)
                 return;
@@ -24,8 +24,6 @@ namespace CitySimulation.Infrastructure.Services
 
             if (person.Age > 50)
                 return;
-
-            var partner = await _personRepository.GetByIdAsync(person.PartnerId.Value);
 
             if (partner == null) 
                 return;

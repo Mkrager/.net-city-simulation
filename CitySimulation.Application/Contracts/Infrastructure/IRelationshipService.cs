@@ -4,6 +4,6 @@ namespace CitySimulation.Application.Contracts.Infrastructure
 {
     public interface IRelationshipService
     {
-        Task FindPartnerAsync(Person person);
+        Task FindPartnerAsync(IReadOnlyCollection<Person> people);
     }
 }

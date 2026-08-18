@@ -4,6 +4,6 @@ namespace CitySimulation.Application.Contracts.Infrastructure
 {
     public interface IBirthService
     {
-        Task ProcessBirthAsync(Person person);
+        Task ProcessBirthAsync(Person person, Person partner);
     }
 }
