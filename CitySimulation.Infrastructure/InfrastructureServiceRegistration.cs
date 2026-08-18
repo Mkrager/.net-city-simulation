@@ -12,6 +12,7 @@ namespace CitySimulation.Infrastructure
             services.AddScoped<ISimulationService, SimulationService>();
             services.AddScoped<IMortalityService, MortalityService>();
             services.AddScoped<IRelationshipService, RelationshipService>();
+            services.AddScoped<INameGenerator, NameGenerator>();
 
             return services;
         }
