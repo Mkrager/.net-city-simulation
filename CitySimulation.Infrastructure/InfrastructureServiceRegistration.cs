@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using CitySimulation.Infrastructure.SimulationBackgroundServices;
 using CitySimulation.Application.Contracts.Infrastructure;
+using CitySimulation.Infrastructure.Services;
 
 namespace CitySimulation.Infrastructure
 {
@@ -10,6 +10,7 @@ namespace CitySimulation.Infrastructure
         {
             services.AddHostedService<SimulationBackgroundService>();
             services.AddScoped<ISimulationService, SimulationService>();
+            services.AddScoped<IMortalityService, MortalityService>();
 
             return services;
         }

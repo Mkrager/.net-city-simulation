@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace CitySimulation.Infrastructure.SimulationBackgroundServices
+namespace CitySimulation.Infrastructure
 {
     public class SimulationBackgroundService : BackgroundService
     {
