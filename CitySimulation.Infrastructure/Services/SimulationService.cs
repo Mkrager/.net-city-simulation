@@ -8,18 +8,23 @@ namespace CitySimulation.Infrastructure.Services
         private readonly IPersonRepository _personRepository;
         private readonly IMortalityService _mortalityService;
         private readonly IRelationshipService _relationshipService;
+        private readonly IBirthService _birthService;
         public SimulationService(
             IPersonRepository personRepository, 
             IMortalityService mortalityService,
-            IRelationshipService relationship)
+            IRelationshipService relationship,
+            IBirthService birthService)
         {
             _personRepository = personRepository;
             _mortalityService = mortalityService;
             _relationshipService = relationship;
+            _birthService = birthService;
         }
         public async Task TickAsync(CancellationToken cancellationToken)
         {
             var people = await _personRepository.ListAllAsync();
+
+            var processedPairs = new HashSet<Guid>();
 
             await _personRepository.IncrementAgeAsync(cancellationToken);
 
@@ -32,7 +37,15 @@ namespace CitySimulation.Infrastructure.Services
 
                 await _relationshipService.FindPartnerAsync(person);
 
+                if (!person.PartnerId.HasValue)
+                    continue;
 
+                if (processedPairs.Contains(person.PartnerId.Value))
+                    continue;
+
+                await _birthService.ProcessBirthAsync(person);
+
+                processedPairs.Add(person.Id);
             }   
         }
     }
