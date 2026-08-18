@@ -11,6 +11,7 @@ namespace CitySimulation.Infrastructure
             services.AddHostedService<SimulationBackgroundService>();
             services.AddScoped<ISimulationService, SimulationService>();
             services.AddScoped<IMortalityService, MortalityService>();
+            services.AddScoped<IRelationshipService, RelationshipService>();
 
             return services;
         }

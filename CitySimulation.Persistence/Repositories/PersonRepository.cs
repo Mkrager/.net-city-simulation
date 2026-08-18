@@ -1,14 +1,26 @@
 ﻿using CitySimulation.Application.Contracts.Persistance;
 using CitySimulation.Domain.Entities;
+using CitySimulation.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
-
 namespace CitySimulation.Persistence.Repositories
 {
     public class PersonRepository : BaseRepository<Person>, IPersonRepository
     {
         public PersonRepository(CitySimulationDbContext dbContext) : base(dbContext)
         {
+        }
+
+        public async Task<Person?> FindAvailablePartnerAsync(Person person, Gender partnerGender)
+        {
+
+            return await _dbContext.Persons
+                .FirstOrDefaultAsync(
+                p =>
+                    p.Id != person.Id &&
+                    p.CityId == person.CityId &&
+                    p.Age >= 16 &&
+                    p.PartnerId == null &&
+                    p.Gender == partnerGender);
         }
 
         public async Task IncrementAgeAsync(CancellationToken cancellationToken)

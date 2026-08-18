@@ -7,10 +7,15 @@ namespace CitySimulation.Infrastructure.Services
     {
         private readonly IPersonRepository _personRepository;
         private readonly IMortalityService _mortalityService;
-        public SimulationService(IPersonRepository personRepository, IMortalityService mortalityService)
+        private readonly IRelationshipService _relationshipService;
+        public SimulationService(
+            IPersonRepository personRepository, 
+            IMortalityService mortalityService,
+            IRelationshipService relationship)
         {
             _personRepository = personRepository;
             _mortalityService = mortalityService;
+            _relationshipService = relationship;
         }
         public async Task TickAsync(CancellationToken cancellationToken)
         {
@@ -24,7 +29,11 @@ namespace CitySimulation.Infrastructure.Services
                 {
                     await _personRepository.DeleteAsync(person);
                 }
-            }
+
+                await _relationshipService.FindPartnerAsync(person);
+
+
+            }   
         }
     }
 }
