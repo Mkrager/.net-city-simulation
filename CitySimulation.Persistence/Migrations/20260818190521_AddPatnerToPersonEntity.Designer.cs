@@ -4,6 +4,7 @@ using CitySimulation.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitySimulation.Persistence.Migrations
 {
     [DbContext(typeof(CitySimulationDbContext))]
-    partial class CitySimulationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260818190521_AddPatnerToPersonEntity")]
+    partial class AddPatnerToPersonEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
