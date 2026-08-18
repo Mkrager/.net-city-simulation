@@ -23,6 +23,11 @@ namespace CitySimulation.Persistence.Repositories
                     p.Gender == partnerGender);
         }
 
+        public async Task<int> GetPeopleCount()
+        {
+            return await _dbContext.Persons.CountAsync();
+        }
+
         public async Task IncrementAgeAsync(CancellationToken cancellationToken)
         {
             await _dbContext.Persons.ExecuteUpdateAsync(

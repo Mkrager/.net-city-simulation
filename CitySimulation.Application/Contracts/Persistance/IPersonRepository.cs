@@ -8,5 +8,6 @@ namespace CitySimulation.Application.Contracts.Persistance
         Task IncrementAgeAsync(CancellationToken cancellationToken);
         Task SetPartnersAsync(Person firstPerson, Person secoundPerson);
         Task<Person?> FindAvailablePartnerAsync(Person person, Gender partnerGender);
+        Task<int> GetPeopleCount();
     }
 }

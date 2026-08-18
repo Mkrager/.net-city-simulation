@@ -46,6 +46,8 @@ namespace CitySimulation.Infrastructure.Services
                 await _birthService.ProcessBirthAsync(person);
 
                 processedPairs.Add(person.Id);
+
+                Console.WriteLine($"People count:{await _personRepository.GetPeopleCount()}");
             }   
         }
     }
