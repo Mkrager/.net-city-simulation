@@ -14,6 +14,7 @@ namespace CitySimulation.Persistence
         public DbSet<City> Cities { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<Workplace> Workplaces { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

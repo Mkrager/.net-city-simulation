@@ -15,6 +15,10 @@ namespace CitySimulation.Persistence.Seeds
         {
             var cityId = Guid.NewGuid();
 
+            var techCompanyId = Guid.NewGuid();
+            var educationCompanyId = Guid.NewGuid();
+            var healthCompanyId = Guid.NewGuid();
+
             var officeId = Guid.NewGuid();
             var schoolId = Guid.NewGuid();
             var hospitalId = Guid.NewGuid();
@@ -44,25 +48,52 @@ namespace CitySimulation.Persistence.Seeds
                     Name = "Lviv"
                 });
 
+            // Companies
+            modelBuilder.Entity<Company>().HasData(
+                new Company
+                {
+                    Id = techCompanyId,
+                    Name = "LvivTech",
+                    Money = 100000,
+                    CityId = cityId
+                },
+                new Company
+                {
+                    Id = educationCompanyId,
+                    Name = "Lviv Education",
+                    Money = 50000,
+                    CityId = cityId
+                },
+                new Company
+                {
+                    Id = healthCompanyId,
+                    Name = "Lviv Health",
+                    Money = 150000,
+                    CityId = cityId
+                });
+
             // Workplaces
             modelBuilder.Entity<Workplace>().HasData(
                 new Workplace
                 {
                     Id = officeId,
-                    Name = "Tech Company",
-                    Capacity = 10
+                    Name = "Tech Office",
+                    Capacity = 10,
+                    CompanyId = techCompanyId
                 },
                 new Workplace
                 {
                     Id = schoolId,
                     Name = "Lviv School",
-                    Capacity = 5
+                    Capacity = 5,
+                    CompanyId = educationCompanyId
                 },
                 new Workplace
                 {
                     Id = hospitalId,
                     Name = "City Hospital",
-                    Capacity = 5
+                    Capacity = 5,
+                    CompanyId = healthCompanyId
                 });
 
             // Jobs
