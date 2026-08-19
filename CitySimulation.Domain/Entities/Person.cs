@@ -8,7 +8,9 @@ namespace CitySimulation.Domain.Entities
         public string Name { get; set; } = string.Empty;
         public int Age { get; set; }
         public Gender Gender { get; set; }
+
         public decimal Money { get; set; }
+        public decimal LivingCost { get; set; }
 
         public Guid CityId { get; set; }
         public City City { get; set; } = default!;
