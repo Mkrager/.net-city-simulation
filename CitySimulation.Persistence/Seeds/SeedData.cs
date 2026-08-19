@@ -71,35 +71,35 @@ namespace CitySimulation.Persistence.Seeds
                 {
                     Id = developerJobId,
                     Title = "Software Developer",
-                    Salary = 3000,
+                    AnnualSalary = 3000,
                     WorkplaceId = officeId
                 },
                 new Job
                 {
                     Id = managerJobId,
                     Title = "Project Manager",
-                    Salary = 4000,
+                    AnnualSalary = 4000,
                     WorkplaceId = officeId
                 },
                 new Job
                 {
                     Id = teacherJobId,
                     Title = "Teacher",
-                    Salary = 2000,
+                    AnnualSalary = 2000,
                     WorkplaceId = schoolId
                 },
                 new Job
                 {
                     Id = doctorJobId,
                     Title = "Doctor",
-                    Salary = 4500,
+                    AnnualSalary = 4500,
                     WorkplaceId = hospitalId
                 },
                 new Job
                 {
                     Id = nurseJobId,
                     Title = "Nurse",
-                    Salary = 2500,
+                    AnnualSalary = 2500,
                     WorkplaceId = hospitalId
                 });
 

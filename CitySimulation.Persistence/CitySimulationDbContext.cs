@@ -18,6 +18,12 @@ namespace CitySimulation.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Person>().
+                HasOne(p => p.Partner)
+                .WithOne()
+                .HasForeignKey<Person>(p => p.PartnerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CitySimulationDbContext).Assembly);
 
             SeedData.Seed(modelBuilder);

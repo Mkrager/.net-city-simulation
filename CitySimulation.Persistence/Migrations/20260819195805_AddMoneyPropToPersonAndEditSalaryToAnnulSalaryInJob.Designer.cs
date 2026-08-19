@@ -4,6 +4,7 @@ using CitySimulation.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitySimulation.Persistence.Migrations
 {
     [DbContext(typeof(CitySimulationDbContext))]
-    partial class CitySimulationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260819195805_AddMoneyPropToPersonAndEditSalaryToAnnulSalaryInJob")]
+    partial class AddMoneyPropToPersonAndEditSalaryToAnnulSalaryInJob
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +41,7 @@ namespace CitySimulation.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            Id = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Name = "Lviv"
                         });
                 });
@@ -67,38 +70,38 @@ namespace CitySimulation.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("844ef091-c288-47f4-8edb-884cee07aaa6"),
+                            Id = new Guid("16e1b967-3326-4ca8-801e-15828447f2ac"),
                             AnnualSalary = 3000m,
                             Title = "Software Developer",
-                            WorkplaceId = new Guid("31221fda-95c9-4da7-a168-250d41d3257a")
+                            WorkplaceId = new Guid("7e76b8eb-ac42-436e-9045-153286f5a333")
                         },
                         new
                         {
-                            Id = new Guid("3511646d-8567-46ad-9d05-74a2fac21f91"),
+                            Id = new Guid("328cb786-10de-4b72-9bcc-b30d502df34a"),
                             AnnualSalary = 4000m,
                             Title = "Project Manager",
-                            WorkplaceId = new Guid("31221fda-95c9-4da7-a168-250d41d3257a")
+                            WorkplaceId = new Guid("7e76b8eb-ac42-436e-9045-153286f5a333")
                         },
                         new
                         {
-                            Id = new Guid("9a201367-19cb-4cd7-a7e7-e20a1d7c1562"),
+                            Id = new Guid("6551d8ac-f741-4a40-b776-c36070d4c7eb"),
                             AnnualSalary = 2000m,
                             Title = "Teacher",
-                            WorkplaceId = new Guid("17ebdb58-0989-4061-b66c-78173ebeac5a")
+                            WorkplaceId = new Guid("508d59e5-41b6-4560-bf9d-8b11ecde274d")
                         },
                         new
                         {
-                            Id = new Guid("b5631cc9-d4f2-4014-8f50-5c6f4d6cfe2f"),
+                            Id = new Guid("4a7dc922-2408-4885-be9e-dbc1c8d86e46"),
                             AnnualSalary = 4500m,
                             Title = "Doctor",
-                            WorkplaceId = new Guid("abeb2d35-c30b-40b1-8e5c-abacf8f6f437")
+                            WorkplaceId = new Guid("f94949b1-b1ba-452b-813b-a78202f4e875")
                         },
                         new
                         {
-                            Id = new Guid("caf684c8-f8b3-42b9-83a1-ce99c66b6c06"),
+                            Id = new Guid("438cd5dd-a5c2-453b-8de5-8ddea426ccf9"),
                             AnnualSalary = 2500m,
                             Title = "Nurse",
-                            WorkplaceId = new Guid("abeb2d35-c30b-40b1-8e5c-abacf8f6f437")
+                            WorkplaceId = new Guid("f94949b1-b1ba-452b-813b-a78202f4e875")
                         });
                 });
 
@@ -136,104 +139,102 @@ namespace CitySimulation.Persistence.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.HasIndex("PartnerId")
-                        .IsUnique()
-                        .HasFilter("[PartnerId] IS NOT NULL");
+                    b.HasIndex("PartnerId");
 
                     b.ToTable("Persons");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6b1cdd4f-6e73-48f5-95db-a847e25234b5"),
+                            Id = new Guid("84bd3808-fb5b-4865-a118-52410f6d7002"),
                             Age = 22,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 0,
-                            JobId = new Guid("844ef091-c288-47f4-8edb-884cee07aaa6"),
+                            JobId = new Guid("16e1b967-3326-4ca8-801e-15828447f2ac"),
                             Money = 0m,
                             Name = "Max"
                         },
                         new
                         {
-                            Id = new Guid("6ca886ca-0033-434d-893b-1fd7d8272769"),
+                            Id = new Guid("418255a0-8646-419d-836a-028229a0515c"),
                             Age = 28,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 1,
-                            JobId = new Guid("9a201367-19cb-4cd7-a7e7-e20a1d7c1562"),
+                            JobId = new Guid("6551d8ac-f741-4a40-b776-c36070d4c7eb"),
                             Money = 0m,
                             Name = "Anna"
                         },
                         new
                         {
-                            Id = new Guid("697cb4d9-6530-43d6-a0c3-a0d2ca7c3ebe"),
+                            Id = new Guid("c3a2a8f4-dbd7-4d62-89ea-ba81ba825e11"),
                             Age = 35,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 0,
-                            JobId = new Guid("3511646d-8567-46ad-9d05-74a2fac21f91"),
+                            JobId = new Guid("328cb786-10de-4b72-9bcc-b30d502df34a"),
                             Money = 0m,
                             Name = "John"
                         },
                         new
                         {
-                            Id = new Guid("cd4e25e2-c376-42f2-bfd1-679e19d9a55a"),
+                            Id = new Guid("61462904-0af5-429f-98be-2756187952a5"),
                             Age = 31,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 1,
-                            JobId = new Guid("b5631cc9-d4f2-4014-8f50-5c6f4d6cfe2f"),
+                            JobId = new Guid("4a7dc922-2408-4885-be9e-dbc1c8d86e46"),
                             Money = 0m,
                             Name = "Emma"
                         },
                         new
                         {
-                            Id = new Guid("ff5c4db5-d6cb-4c79-a723-c9546edfdf4b"),
+                            Id = new Guid("e413fb20-b525-4abb-a61c-3f06459396ef"),
                             Age = 25,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 0,
-                            JobId = new Guid("caf684c8-f8b3-42b9-83a1-ce99c66b6c06"),
+                            JobId = new Guid("438cd5dd-a5c2-453b-8de5-8ddea426ccf9"),
                             Money = 0m,
                             Name = "Alex"
                         },
                         new
                         {
-                            Id = new Guid("94adffcc-fb7a-4f93-880f-0b8e14669f6a"),
+                            Id = new Guid("9be88d60-ea11-48cb-8002-fde5c3b28407"),
                             Age = 17,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 1,
                             Money = 0m,
                             Name = "Sophie"
                         },
                         new
                         {
-                            Id = new Guid("8ff3cba4-bab9-41c2-b990-a50fe59a4fc3"),
+                            Id = new Guid("a8f9a481-f34d-4b72-a3a5-686b29c69c57"),
                             Age = 16,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 0,
                             Money = 0m,
                             Name = "Daniel"
                         },
                         new
                         {
-                            Id = new Guid("4e1fa8ad-4819-49ef-bf64-0d20520f2d7e"),
+                            Id = new Guid("d693dd51-0eb0-4e9b-a937-453631f977ca"),
                             Age = 8,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 1,
                             Money = 0m,
                             Name = "Olivia"
                         },
                         new
                         {
-                            Id = new Guid("fda5dee7-e66d-45c6-bd45-d9756d0018e2"),
+                            Id = new Guid("a0775f49-8734-4bfa-be5e-eae51e6373c2"),
                             Age = 67,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 0,
                             Money = 0m,
                             Name = "James"
                         },
                         new
                         {
-                            Id = new Guid("1f1a6935-51ef-4368-adb5-cd99df124867"),
+                            Id = new Guid("68e84d67-649b-4d0b-88eb-0c4c53963b93"),
                             Age = 70,
-                            CityId = new Guid("f6a87de8-abd7-4bd0-a69c-ea5735e8a10e"),
+                            CityId = new Guid("a8bd7ba3-63bd-4874-a617-e41d80868960"),
                             Gender = 1,
                             Money = 0m,
                             Name = "Mia"
@@ -259,19 +260,19 @@ namespace CitySimulation.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("31221fda-95c9-4da7-a168-250d41d3257a"),
+                            Id = new Guid("7e76b8eb-ac42-436e-9045-153286f5a333"),
                             Capacity = 10,
                             Name = "Tech Company"
                         },
                         new
                         {
-                            Id = new Guid("17ebdb58-0989-4061-b66c-78173ebeac5a"),
+                            Id = new Guid("508d59e5-41b6-4560-bf9d-8b11ecde274d"),
                             Capacity = 5,
                             Name = "Lviv School"
                         },
                         new
                         {
-                            Id = new Guid("abeb2d35-c30b-40b1-8e5c-abacf8f6f437"),
+                            Id = new Guid("f94949b1-b1ba-452b-813b-a78202f4e875"),
                             Capacity = 5,
                             Name = "City Hospital"
                         });
@@ -301,9 +302,8 @@ namespace CitySimulation.Persistence.Migrations
                         .HasForeignKey("JobId");
 
                     b.HasOne("CitySimulation.Domain.Entities.Person", "Partner")
-                        .WithOne()
-                        .HasForeignKey("CitySimulation.Domain.Entities.Person", "PartnerId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .WithMany()
+                        .HasForeignKey("PartnerId");
 
                     b.Navigation("City");
 
